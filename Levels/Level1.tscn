@@ -81,14 +81,14 @@ animations = [ {
 "name": "S10",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "S30",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "S100",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "S30",
 "speed": 5.0
 } ]
 
@@ -99,9 +99,9 @@ animations = [ {
 "name": "S50",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 29 ) ],
 "loop": true,
-"name": "nill",
+"name": "S25",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -404,7 +404,7 @@ texture = ExtResource( 13 )
 collision_scale = Vector2( 1.45, 0.8 )
 
 [node name="s_llave2" parent="llave" instance=ExtResource( 2 )]
-position = Vector2( 364.105, 460.752 )
+position = Vector2( 476.105, 460.752 )
 texture = ExtResource( 13 )
 collision_scale = Vector2( 1.7, 0.8 )
 
@@ -505,7 +505,7 @@ desafio = 2
 position = Vector2( 841.334, 434.735 )
 scale = Vector2( 0.842958, 0.856715 )
 texture = ExtResource( 24 )
-collision_scale = Vector2( 1.8, 1.9 )
+collision_scale = Vector2( 1.4, 1.9 )
 
 [node name="uten" parent="utensillos" instance=ExtResource( 1 )]
 modulate = Color( 1, 1, 1, 0.705882 )
@@ -538,9 +538,9 @@ desafio = 3
 [node name="gasista" type="Node2D" parent="."]
 
 [node name="s_gasista" parent="gasista" instance=ExtResource( 2 )]
-position = Vector2( 611.914, 594.234 )
+position = Vector2( 685.696, 594.234 )
 texture = ExtResource( 31 )
-collision_scale = Vector2( 4.2, 12 )
+collision_scale = Vector2( 3.8, 12 )
 
 [node name="gasista" parent="gasista" instance=ExtResource( 1 )]
 modulate = Color( 1, 1, 1, 0.705882 )

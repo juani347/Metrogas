@@ -48,14 +48,14 @@ animations = [ {
 "name": "S10",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "S30",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "S100",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "S30",
 "speed": 5.0
 } ]
 
@@ -66,9 +66,9 @@ animations = [ {
 "name": "S50",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 29 ) ],
 "loop": true,
-"name": "nill",
+"name": "S25",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],

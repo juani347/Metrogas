@@ -8,6 +8,7 @@ var selectedlevel
 var totalScore=0
 var levels=[0,0,0,0,0]
 var newgame=true
+var tip_gasista=false
 
 var sprite_texture_plus=["S30",	"S100",	"S10"]
 
