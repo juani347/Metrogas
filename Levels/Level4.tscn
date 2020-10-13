@@ -1,0 +1,618 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://Obj.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Contenedor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Level4.gd" type="Script" id=3]
+[ext_resource path="res://images/fondo_lavadero.jpg" type="Texture" id=4]
+[ext_resource path="res://images/desafio1.png" type="Texture" id=5]
+[ext_resource path="res://images/desafio2.png" type="Texture" id=6]
+[ext_resource path="res://images/desafio3.png" type="Texture" id=7]
+[ext_resource path="res://ProgressBar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://images/score/minusfifty.png" type="Texture" id=9]
+[ext_resource path="res://images/score/plushundred.png" type="Texture" id=10]
+[ext_resource path="res://images/Level4/termotanque.png" type="Texture" id=11]
+[ext_resource path="res://images/Level4/s_balde.png" type="Texture" id=12]
+[ext_resource path="res://images/level1/sombra_llave.png" type="Texture" id=13]
+[ext_resource path="res://images/level1/llave.png" type="Texture" id=14]
+[ext_resource path="res://images/Level4/secador.png" type="Texture" id=15]
+[ext_resource path="res://images/Level4/s_escoba.png" type="Texture" id=16]
+[ext_resource path="res://images/level1/sombra_llama.png" type="Texture" id=17]
+[ext_resource path="res://images/level1/fuego_drag.png" type="Texture" id=18]
+[ext_resource path="res://images/Level4/escoba.png" type="Texture" id=19]
+[ext_resource path="res://Clock.tscn" type="PackedScene" id=20]
+[ext_resource path="res://images/level1/sombra_ventilacion.png" type="Texture" id=21]
+[ext_resource path="res://images/level1/ventilacion.png" type="Texture" id=22]
+[ext_resource path="res://images/Level4/s_termotanque.png" type="Texture" id=23]
+[ext_resource path="res://images/Level4/s_secador.png" type="Texture" id=24]
+[ext_resource path="res://images/level1/gasista.png" type="Texture" id=25]
+[ext_resource path="res://images/Level4/balde.png" type="Texture" id=26]
+[ext_resource path="res://images/Level4/tip2.png" type="Texture" id=27]
+[ext_resource path="res://images/score/plusthirty.png" type="Texture" id=28]
+[ext_resource path="res://images/score/minustwentyfive.png" type="Texture" id=29]
+[ext_resource path="res://images/score/plusten.png" type="Texture" id=30]
+[ext_resource path="res://images/level1/sombra_gasista.png" type="Texture" id=31]
+[ext_resource path="res://images/Level4/tip1.png" type="Texture" id=32]
+[ext_resource path="res://images/Ok_pressed.png" type="Texture" id=33]
+[ext_resource path="res://images/Ok_disabled.png" type="Texture" id=34]
+[ext_resource path="res://music/win_level.wav" type="AudioStream" id=35]
+[ext_resource path="res://images/Ok.png" type="Texture" id=36]
+[ext_resource path="res://images/next_word.png" type="Texture" id=37]
+[ext_resource path="res://images/mano.png" type="Texture" id=38]
+[ext_resource path="res://images/score/progressbar_black.png" type="Texture" id=39]
+[ext_resource path="res://music/change_desafio2.wav" type="AudioStream" id=40]
+[ext_resource path="res://music/incorrecto2.wav" type="AudioStream" id=41]
+[ext_resource path="res://music/popup.wav" type="AudioStream" id=42]
+[ext_resource path="res://music/ambiente.wav" type="AudioStream" id=43]
+[ext_resource path="res://music/correcto.wav" type="AudioStream" id=44]
+[ext_resource path="res://images/next_word_pressed.png" type="Texture" id=45]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "S10",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "S100",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "S30",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "S25",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "S50",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "nill",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Plus:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Plus:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Plus:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Minus:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Minus:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Minus:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Change1"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/path = NodePath("consigna1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mano:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Change2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("consigna2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mano:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Change3"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("consigna3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mano:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "Tip1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "Tip2",
+"speed": 5.0
+} ]
+
+[node name="Level4" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Fondo" type="Sprite" parent="."]
+position = Vector2( 961.171, 538.539 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mano" type="Sprite" parent="."]
+position = Vector2( 1866.76, 347.96 )
+scale = Vector2( 0.822306, 0.822306 )
+texture = ExtResource( 38 )
+
+[node name="consigna1" type="Sprite" parent="."]
+position = Vector2( 1162.85, 542.972 )
+texture = ExtResource( 5 )
+
+[node name="consigna2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1188.22, 552.727 )
+texture = ExtResource( 6 )
+
+[node name="consigna3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1165.89, 557.68 )
+texture = ExtResource( 7 )
+
+[node name="Back_progressbar" type="Sprite" parent="."]
+position = Vector2( 573.086, 979.734 )
+scale = Vector2( 1.08, 1.05 )
+texture = ExtResource( 39 )
+
+[node name="ProgressBar" parent="." instance=ExtResource( 8 )]
+margin_left = 363.442
+margin_top = 953.519
+margin_right = 813.442
+margin_bottom = 1022.52
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Plus" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 647.25, 448.206 )
+z_index = 3
+frames = SubResource( 1 )
+animation = "S30"
+
+[node name="Minus" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 647.25, 448.206 )
+z_index = 3
+frames = SubResource( 2 )
+animation = "nill"
+
+[node name="AnimationPlus" type="AnimationPlayer" parent="."]
+anims/zoom = SubResource( 3 )
+
+[node name="AnimationMinus" type="AnimationPlayer" parent="."]
+anims/zoom = SubResource( 4 )
+
+[node name="AnimationChallenge" type="AnimationPlayer" parent="."]
+anims/Change1 = SubResource( 5 )
+anims/Change2 = SubResource( 6 )
+anims/Change3 = SubResource( 7 )
+
+[node name="Clock" parent="." instance=ExtResource( 20 )]
+position = Vector2( 33.424, 966.448 )
+
+[node name="termotanque" type="Node2D" parent="."]
+
+[node name="s_termotanque" parent="termotanque" instance=ExtResource( 2 )]
+position = Vector2( 884.139, 574.138 )
+scale = Vector2( 0.929444, 0.982288 )
+texture = ExtResource( 23 )
+collision_scale = Vector2( 4, 10.1 )
+
+[node name="termotanque" parent="termotanque" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1581.07, 845.403 )
+scale = Vector2( 0.171, 0.171 )
+texture = ExtResource( 11 )
+start_position = Vector2( 1581.07, 845.403 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 13, 29 )
+final_scale = Vector2( 0.275, 0.284 )
+desafio = 1
+
+[node name="llave" type="Node2D" parent="."]
+
+[node name="s_llave" parent="llave" instance=ExtResource( 2 )]
+position = Vector2( 1090.54, 589.801 )
+texture = ExtResource( 13 )
+collision_scale = Vector2( 1.45, 0.8 )
+
+[node name="llave" parent="llave" instance=ExtResource( 1 )]
+position = Vector2( 1777.33, 756.427 )
+texture = ExtResource( 14 )
+start_position = Vector2( 1777.33, 756.427 )
+final_position = Vector2( 1173.04, 720.338 )
+collision_scale = Vector2( 2, 1 )
+final_scale = Vector2( 0.8, 0.8 )
+desafio = 2
+
+[node name="llama" type="Node2D" parent="."]
+
+[node name="s_llama" parent="llama" instance=ExtResource( 2 )]
+position = Vector2( 879.003, 778.727 )
+z_index = 1
+texture = ExtResource( 17 )
+collision_scale = Vector2( 0.8, 0.8 )
+
+[node name="llama" parent="llama" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1371.88, 966.582 )
+scale = Vector2( 0.84, 0.84 )
+z_index = 2
+texture = ExtResource( 18 )
+start_position = Vector2( 1371.88, 966.582 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 2, 1.9 )
+final_scale = Vector2( 0.344, 0.344 )
+desafio = 2
+
+[node name="ventilacion" type="Node2D" parent="."]
+
+[node name="s_vent" parent="ventilacion" instance=ExtResource( 2 )]
+position = Vector2( 1103.3, 782.555 )
+texture = ExtResource( 21 )
+collision_scale = Vector2( 1.7, 1.7 )
+
+[node name="s_vent2" parent="ventilacion" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.588235 )
+position = Vector2( 79.7591, 200.716 )
+texture = ExtResource( 21 )
+collision_scale = Vector2( 1.7, 1.7 )
+
+[node name="vent" parent="ventilacion" instance=ExtResource( 1 )]
+position = Vector2( 1811.74, 504.721 )
+texture = ExtResource( 22 )
+start_position = Vector2( 1811.74, 504.721 )
+final_position = Vector2( 1173.04, 720.338 )
+collision_scale = Vector2( 1.43, 1.25 )
+desafio = 2
+
+[node name="vent2" parent="ventilacion" instance=ExtResource( 1 )]
+position = Vector2( 1812.73, 634.975 )
+texture = ExtResource( 22 )
+start_position = Vector2( 1812.73, 634.975 )
+final_position = Vector2( 1173.04, 720.338 )
+collision_scale = Vector2( 1.43, 1.25 )
+desafio = 2
+
+[node name="escoba" type="Node2D" parent="."]
+
+[node name="s_escoba" parent="escoba" instance=ExtResource( 2 )]
+position = Vector2( 116.326, 623.865 )
+scale = Vector2( 0.842958, 0.838717 )
+texture = ExtResource( 16 )
+collision_scale = Vector2( 3, 10.2 )
+
+[node name="escoba" parent="escoba" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1372.67, 661.5 )
+texture = ExtResource( 19 )
+start_position = Vector2( 1372.67, 661.5 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 2, 6.2 )
+final_scale = Vector2( 1.148, 1.148 )
+desafio = 3
+
+[node name="balde" type="Node2D" parent="."]
+
+[node name="s_balde" parent="balde" instance=ExtResource( 2 )]
+position = Vector2( 319.091, 797.608 )
+scale = Vector2( 0.842958, 0.856715 )
+texture = ExtResource( 12 )
+collision_scale = Vector2( 2, 3.1 )
+
+[node name="balde" parent="balde" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1628.02, 547.849 )
+texture = ExtResource( 26 )
+start_position = Vector2( 1628.02, 547.849 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 2, 2.5 )
+final_scale = Vector2( 0.85, 0.85 )
+desafio = 3
+
+[node name="secador" type="Node2D" parent="."]
+
+[node name="s_secador" parent="secador" instance=ExtResource( 2 )]
+position = Vector2( 475.216, 249.719 )
+scale = Vector2( 0.842958, 0.856715 )
+texture = ExtResource( 24 )
+collision_scale = Vector2( 1.6, 2.8 )
+
+[node name="secador" parent="secador" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1475.97, 547.234 )
+texture = ExtResource( 15 )
+start_position = Vector2( 1475.97, 547.234 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 1.5, 2.2 )
+final_scale = Vector2( 0.865, 0.865 )
+desafio = 3
+
+[node name="gasista" type="Node2D" parent="."]
+
+[node name="s_gasista" parent="gasista" instance=ExtResource( 2 )]
+position = Vector2( 640.802, 604.732 )
+z_index = 1
+texture = ExtResource( 31 )
+collision_scale = Vector2( 4.2, 12 )
+
+[node name="gasista" parent="gasista" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1780.05, 933.334 )
+scale = Vector2( 0.17328, 0.17328 )
+texture = ExtResource( 25 )
+start_position = Vector2( 1780.05, 933.334 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 8, 15 )
+final_scale = Vector2( 0.611, 0.611 )
+desafio = 2
+
+[node name="Timer_Challenge" type="Timer" parent="."]
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 388.0
+margin_top = 802.0
+margin_right = 664.0
+margin_bottom = 901.0
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tip" type="AnimatedSprite" parent="Popup"]
+position = Vector2( 367.257, -191.477 )
+z_index = 3
+frames = SubResource( 8 )
+animation = "Tip1"
+
+[node name="Ok_" type="Sprite" parent="Popup"]
+z_index = 3
+
+[node name="Ok" type="TextureButton" parent="Popup/Ok_"]
+margin_left = 0.682037
+margin_top = -0.449524
+margin_right = 274.682
+margin_bottom = 97.5505
+texture_normal = ExtResource( 36 )
+texture_pressed = ExtResource( 33 )
+texture_hover = ExtResource( 33 )
+texture_disabled = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="correcto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 44 )
+volume_db = -1.01
+
+[node name="backsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 43 )
+volume_db = -15.01
+
+[node name="change_desafio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 40 )
+volume_db = 15.145
+
+[node name="tip_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 42 )
+volume_db = 13.126
+
+[node name="win_level" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 35 )
+volume_db = 8.0
+
+[node name="incorrecto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 41 )
+volume_db = 10.097
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="."]
+resources = [ PoolStringArray( "balde", "escoba", "s_balde", "s_escoba", "s_secador", "s_termotanque", "secador", "termotanque", "tip1", "tip2" ), [ ExtResource( 26 ), ExtResource( 19 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 32 ), ExtResource( 27 ) ] ]
+
+[node name="popup_sig" type="Popup" parent="."]
+visible = true
+margin_left = 1524.63
+margin_top = 923.46
+margin_right = 1833.63
+margin_bottom = 1024.46
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="popup_sig"]
+z_index = 2
+
+[node name="siguiente" type="TextureButton" parent="popup_sig/Sprite"]
+margin_right = 307.0
+margin_bottom = 98.0
+texture_normal = ExtResource( 37 )
+texture_pressed = ExtResource( 45 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="change_challenge" from="." to="." method="_on_change_challenge"]
+[connection signal="score_gained" from="." to="ProgressBar" method="_on_score_gained"]
+[connection signal="score_lost" from="." to="ProgressBar" method="_on_score_lost"]
+[connection signal="show_scoreminus" from="." to="." method="_on_show_scoreminus"]
+[connection signal="show_scoreplus" from="." to="." method="_on_show_scoreplus"]
+[connection signal="show_tip" from="." to="." method="_on_show_tip"]
+[connection signal="start_timer" from="." to="Clock" method="_on_start_timer"]
+[connection signal="stop_timer" from="." to="Clock" method="_on_stop_timer"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="game_over" from="Clock" to="." method="_on_Clock_game_over"]
+[connection signal="deselected" from="termotanque/s_termotanque" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="termotanque/s_termotanque" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="termotanque/termotanque" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="termotanque/termotanque" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="llave/s_llave" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="llave/s_llave" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="llave/llave" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="llave/llave" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="llama/s_llama" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="llama/s_llama" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="llama/llama" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="llama/llama" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="ventilacion/s_vent" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="ventilacion/s_vent" to="." method="_on_Contenedor_selected"]
+[connection signal="deselected" from="ventilacion/s_vent2" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="ventilacion/s_vent2" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="ventilacion/vent" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="ventilacion/vent" to="." method="_on_Obj_drop"]
+[connection signal="clicked" from="ventilacion/vent2" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="ventilacion/vent2" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="escoba/s_escoba" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="escoba/s_escoba" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="escoba/escoba" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="escoba/escoba" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="balde/s_balde" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="balde/s_balde" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="balde/balde" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="balde/balde" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="secador/s_secador" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="secador/s_secador" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="secador/secador" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="secador/secador" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="gasista/s_gasista" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="gasista/s_gasista" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="gasista/gasista" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="gasista/gasista" to="." method="_on_Obj_drop"]
+[connection signal="timeout" from="Timer_Challenge" to="." method="_on_Timer_Challenge_timeout"]
+[connection signal="pressed" from="Popup/Ok_/Ok" to="." method="_on_Ok_pressed"]
+[connection signal="pressed" from="popup_sig/Sprite/siguiente" to="." method="_on_siguiente_pressed"]

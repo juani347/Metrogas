@@ -1,0 +1,132 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://images/close.png" type="Texture" id=1]
+[ext_resource path="res://Welcome.gd" type="Script" id=2]
+[ext_resource path="res://Video.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/como_jugar_pressed.png" type="Texture" id=4]
+[ext_resource path="res://images/back_inicio_cierre.png" type="Texture" id=5]
+[ext_resource path="res://images/play_learn.png" type="Texture" id=6]
+[ext_resource path="res://images/como_jugar.png" type="Texture" id=7]
+[ext_resource path="res://images/recommendation.png" type="Texture" id=8]
+[ext_resource path="res://images/nivel2_pressed.png" type="Texture" id=9]
+[ext_resource path="res://images/start_pressed.png" type="Texture" id=10]
+[ext_resource path="res://images/nivel2.png" type="Texture" id=11]
+[ext_resource path="res://images/nivel1_pressed.png" type="Texture" id=12]
+[ext_resource path="res://images/start.png" type="Texture" id=13]
+[ext_resource path="res://images/nivel1.png" type="Texture" id=14]
+[ext_resource path="res://images/nivel1_disabled.png" type="Texture" id=15]
+[ext_resource path="res://images/nivel2_disabled.png" type="Texture" id=16]
+[ext_resource path="res://images/pop_up.png" type="Texture" id=17]
+[ext_resource path="res://images/close_pressed.png" type="Texture" id=18]
+[ext_resource path="res://images/start_disabled.png" type="Texture" id=19]
+[ext_resource path="res://music/popup.wav" type="AudioStream" id=20]
+
+[node name="Welcome" type="Node2D"]
+script = ExtResource( 2 )
+Video = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 960.423, 542.788 )
+texture = ExtResource( 5 )
+
+[node name="HowToPlay" type="TextureButton" parent="."]
+margin_left = 54.0
+margin_top = 953.0
+margin_right = 305.0
+margin_bottom = 1042.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level1" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 382.0
+margin_top = 953.0
+margin_right = 603.0
+margin_bottom = 1051.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+texture_disabled = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 628.0
+margin_top = 953.0
+margin_right = 879.0
+margin_bottom = 1051.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+texture_disabled = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="TextureButton" parent="."]
+margin_left = 1599.72
+margin_top = 953.0
+margin_right = 1850.72
+margin_bottom = 1039.0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 10 )
+texture_disabled = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugar_aprender" type="Sprite" parent="."]
+position = Vector2( 978.108, 345.535 )
+texture = ExtResource( 6 )
+
+[node name="Recommendation" type="TextureRect" parent="."]
+margin_left = 881.744
+margin_top = 952.621
+margin_right = 1107.74
+margin_bottom = 1050.62
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="."]
+visible = true
+margin_left = 205.0
+margin_top = 149.0
+margin_right = 306.0
+margin_bottom = 250.0
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Popup"]
+position = Vector2( 764.945, 399.302 )
+texture = ExtResource( 17 )
+
+[node name="Close_popup" type="TextureButton" parent="Popup"]
+margin_left = -0.206116
+margin_top = 2.12497
+margin_right = 102.794
+margin_bottom = 100.125
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+volume_db = 10.097
+[connection signal="pressed" from="HowToPlay" to="." method="_on_HowToPlay_pressed"]
+[connection signal="pressed" from="Level1" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="Level2" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Popup/Close_popup" to="." method="_on_Close_popup_pressed"]

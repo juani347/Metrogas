@@ -1,0 +1,86 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://StarsScene.gd" type="Script" id=1]
+[ext_resource path="res://images/stars2.png" type="Texture" id=2]
+[ext_resource path="res://images/TextBox.png" type="Texture" id=3]
+[ext_resource path="res://images/stars3.png" type="Texture" id=4]
+[ext_resource path="res://images/textend.png" type="Texture" id=5]
+[ext_resource path="res://images/stars1.png" type="Texture" id=6]
+[ext_resource path="res://images/back_inicio_cierre.png" type="Texture" id=7]
+[ext_resource path="res://images/download_recetario.png" type="Texture" id=8]
+[ext_resource path="res://images/download_recetario_pressed.png" type="Texture" id=9]
+[ext_resource path="res://images/next_pressed.png" type="Texture" id=10]
+[ext_resource path="res://images/next.png" type="Texture" id=11]
+[ext_resource path="res://music/win_game.wav" type="AudioStream" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "three",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "one",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "two",
+"speed": 5.0
+} ]
+
+[node name="StarsScene" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Back" type="Sprite" parent="."]
+position = Vector2( 959.065, 541.43 )
+texture = ExtResource( 7 )
+
+[node name="TextBox" type="Sprite" parent="."]
+position = Vector2( 965.867, 606.728 )
+texture = ExtResource( 3 )
+
+[node name="Textandstars" type="AnimatedSprite" parent="."]
+position = Vector2( 968.588, 287.039 )
+frames = SubResource( 1 )
+animation = "three"
+
+[node name="Text" type="Sprite" parent="."]
+position = Vector2( 972.669, 712.837 )
+texture = ExtResource( 5 )
+
+[node name="Download" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 689.484
+margin_top = 938.659
+margin_right = 1220.48
+margin_bottom = 1036.66
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+texture_disabled = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="TextureButton" parent="."]
+margin_left = 1764.41
+margin_top = 945.461
+margin_right = 1867.41
+margin_bottom = 1043.46
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+[connection signal="pressed" from="Download" to="." method="_on_Download_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]

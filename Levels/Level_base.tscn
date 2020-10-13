@@ -1,0 +1,220 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Levels/Level_base.gd" type="Script" id=1]
+[ext_resource path="res://images/fondo_living.jpg" type="Texture" id=2]
+[ext_resource path="res://images/fondo_cocina.jpg" type="Texture" id=3]
+[ext_resource path="res://images/fondo_lavadero.jpg" type="Texture" id=4]
+[ext_resource path="res://images/desafio1.png" type="Texture" id=5]
+[ext_resource path="res://images/desafio2.png" type="Texture" id=6]
+[ext_resource path="res://images/desafio3.png" type="Texture" id=7]
+[ext_resource path="res://ProgressBar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://images/score/minusfifty.png" type="Texture" id=9]
+[ext_resource path="res://images/score/plushundred.png" type="Texture" id=10]
+[ext_resource path="res://images/fondo_baño.jpg" type="Texture" id=11]
+[ext_resource path="res://Clock.tscn" type="PackedScene" id=20]
+[ext_resource path="res://images/score/plusthirty.png" type="Texture" id=28]
+[ext_resource path="res://images/score/minustwentyfive.png" type="Texture" id=29]
+[ext_resource path="res://images/score/plusten.png" type="Texture" id=30]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "lavadero",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "cocina",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "baño",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "living",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "S100",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "S30",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "S10",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "S25",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "nill",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "S50",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Plus:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Plus:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Plus:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Minus:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Minus:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Minus:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Level_base" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Fondo" type="AnimatedSprite" parent="."]
+position = Vector2( 961.171, 538.539 )
+frames = SubResource( 1 )
+animation = "lavadero"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="consigna1" type="Sprite" parent="."]
+position = Vector2( 1162.85, 542.972 )
+texture = ExtResource( 5 )
+
+[node name="consigna2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1188.22, 552.727 )
+texture = ExtResource( 6 )
+
+[node name="consigna3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1165.89, 557.68 )
+texture = ExtResource( 7 )
+
+[node name="ProgressBar" parent="." instance=ExtResource( 8 )]
+margin_left = 330.293
+margin_top = 946.608
+margin_right = 756.413
+margin_bottom = 1015.61
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Plus" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 647.25, 448.206 )
+z_index = 3
+frames = SubResource( 2 )
+animation = "S30"
+
+[node name="Minus" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 647.25, 448.206 )
+z_index = 3
+frames = SubResource( 3 )
+animation = "nill"
+
+[node name="AnimationPlus" type="AnimationPlayer" parent="."]
+anims/zoom = SubResource( 4 )
+
+[node name="AnimationMinus" type="AnimationPlayer" parent="."]
+anims/zoom = SubResource( 5 )
+
+[node name="Clock" parent="." instance=ExtResource( 20 )]
+position = Vector2( 33.424, 966.448 )
+
+[node name="Timer_Challenge" type="Timer" parent="."]
+[connection signal="change_challenge" from="." to="." method="_on_change_challenge"]
+[connection signal="score_gained" from="." to="ProgressBar" method="_on_score_gained"]
+[connection signal="score_lost" from="." to="ProgressBar" method="_on_score_lost"]
+[connection signal="show_scoreminus" from="." to="." method="_on_show_scoreminus"]
+[connection signal="show_scoreplus" from="." to="." method="_on_show_scoreplus"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="game_over" from="Clock" to="." method="_on_Clock_game_over"]
+[connection signal="timeout" from="Timer_Challenge" to="." method="_on_Timer_Challenge_timeout"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://images/clock_progress.png" type="Texture" id=1]
+[ext_resource path="res://images/clock_over.png" type="Texture" id=2]
+[ext_resource path="res://Clock.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/FontsFree-Net-cobbler-sans-bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 49
+font_data = ExtResource( 4 )
+
+[node name="Clock" type="Sprite"]
+position = Vector2( 480.987, 233.206 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Clock" type="TextureProgress" parent="."]
+margin_left = -8.68756
+margin_top = -89.3686
+margin_right = 191.312
+margin_bottom = 110.631
+max_value = 40.0
+value = 40.0
+texture_progress = ExtResource( 1 )
+fill_mode = 4
+tint_progress = Color( 1, 0.533333, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -8.76245
+margin_top = -90.0177
+margin_right = 191.238
+margin_bottom = 109.982
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Secs" type="Label" parent="."]
+margin_left = 44.9697
+margin_top = 2.2923
+margin_right = 135.97
+margin_bottom = 62.2923
+custom_fonts/font = SubResource( 1 )
+text = "SEG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="."]
+margin_left = 52.7809
+margin_top = -46.6643
+margin_right = 127.781
+margin_bottom = 13.3357
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

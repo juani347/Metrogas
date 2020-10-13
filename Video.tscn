@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Videos/jugar.ogv" type="VideoStream" id=1]
+[ext_resource path="res://Video.gd" type="Script" id=2]
+[ext_resource path="res://images/next_word.png" type="Texture" id=3]
+[ext_resource path="res://images/next_word_pressed.png" type="Texture" id=4]
+[ext_resource path="res://images/logo_calido.png" type="Texture" id=5]
+
+[node name="Video" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1919.0
+margin_bottom = 1079.0
+stream = ExtResource( 1 )
+autoplay = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="."]
+margin_left = 1569.18
+margin_top = 943.029
+margin_right = 1876.18
+margin_bottom = 1043.03
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 971.247, 97.5137 )
+texture = ExtResource( 5 )
+[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

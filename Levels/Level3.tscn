@@ -1,0 +1,518 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://Obj.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Contenedor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Level3.gd" type="Script" id=3]
+[ext_resource path="res://images/fondo_baño.jpg" type="Texture" id=4]
+[ext_resource path="res://images/desafio1.png" type="Texture" id=5]
+[ext_resource path="res://images/Level3/desafio2.png" type="Texture" id=6]
+[ext_resource path="res://images/Level3/Tip1.png" type="Texture" id=7]
+[ext_resource path="res://ProgressBar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://images/score/minusfifty.png" type="Texture" id=9]
+[ext_resource path="res://images/score/plushundred.png" type="Texture" id=10]
+[ext_resource path="res://images/Level3/perchero.png" type="Texture" id=11]
+[ext_resource path="res://images/Level3/maceta.png" type="Texture" id=12]
+[ext_resource path="res://images/Level3/s_maceta.png" type="Texture" id=13]
+[ext_resource path="res://images/Level3/llave.png" type="Texture" id=14]
+[ext_resource path="res://images/Level3/pato.png" type="Texture" id=15]
+[ext_resource path="res://images/Level3/s_perchero.png" type="Texture" id=16]
+[ext_resource path="res://images/Level3/toalla.png" type="Texture" id=17]
+[ext_resource path="res://images/Level3/espejo.png" type="Texture" id=18]
+[ext_resource path="res://images/Level3/s_pato.png" type="Texture" id=19]
+[ext_resource path="res://Clock.tscn" type="PackedScene" id=20]
+[ext_resource path="res://images/Level3/s_toalla.png" type="Texture" id=21]
+[ext_resource path="res://images/Level3/s_llave.png" type="Texture" id=22]
+[ext_resource path="res://images/Level3/s_espejo.png" type="Texture" id=23]
+[ext_resource path="res://images/next_word.png" type="Texture" id=24]
+[ext_resource path="res://images/next_word_pressed.png" type="Texture" id=25]
+[ext_resource path="res://images/score/plusthirty.png" type="Texture" id=28]
+[ext_resource path="res://images/score/minustwentyfive.png" type="Texture" id=29]
+[ext_resource path="res://images/score/plusten.png" type="Texture" id=30]
+[ext_resource path="res://images/Ok_pressed.png" type="Texture" id=33]
+[ext_resource path="res://images/Ok_disabled.png" type="Texture" id=34]
+[ext_resource path="res://images/Ok.png" type="Texture" id=36]
+[ext_resource path="res://images/mano.png" type="Texture" id=38]
+[ext_resource path="res://images/score/progressbar_black.png" type="Texture" id=39]
+[ext_resource path="res://music/change_desafio2.wav" type="AudioStream" id=40]
+[ext_resource path="res://music/incorrecto2.wav" type="AudioStream" id=41]
+[ext_resource path="res://music/popup.wav" type="AudioStream" id=42]
+[ext_resource path="res://music/ambiente.wav" type="AudioStream" id=43]
+[ext_resource path="res://music/correcto.wav" type="AudioStream" id=44]
+[ext_resource path="res://music/win_level.wav" type="AudioStream" id=45]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "S10",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "S30",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "S100",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "S25",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "nill",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "S50",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Plus:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Plus:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Plus:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Minus:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Minus:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Minus:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Change1"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/path = NodePath("consigna1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mano:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Change2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("consigna2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mano:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Tip1",
+"speed": 5.0
+} ]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Fondo" type="Sprite" parent="."]
+position = Vector2( 961.171, 538.539 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mano" type="Sprite" parent="."]
+position = Vector2( 1866.76, 347.96 )
+scale = Vector2( 0.822306, 0.822306 )
+texture = ExtResource( 38 )
+
+[node name="consigna1" type="Sprite" parent="."]
+position = Vector2( 1162.85, 542.972 )
+texture = ExtResource( 5 )
+
+[node name="consigna2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1163.22, 557.727 )
+texture = ExtResource( 6 )
+
+[node name="Back_progressbar" type="Sprite" parent="."]
+position = Vector2( 573.086, 979.734 )
+scale = Vector2( 1.08, 1.05 )
+texture = ExtResource( 39 )
+
+[node name="ProgressBar" parent="." instance=ExtResource( 8 )]
+margin_left = 363.442
+margin_top = 953.519
+margin_right = 813.442
+margin_bottom = 1022.52
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="perchero" type="Node2D" parent="."]
+
+[node name="s_perchero" parent="perchero" instance=ExtResource( 2 )]
+position = Vector2( 1037.11, 277.25 )
+scale = Vector2( 0.975429, 1.05672 )
+texture = ExtResource( 16 )
+collision_scale = Vector2( 5.6, 1.3 )
+
+[node name="perchero" parent="perchero" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1508.68, 538.649 )
+scale = Vector2( 1.01878, 1 )
+texture = ExtResource( 11 )
+start_position = Vector2( 1508.68, 538.649 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 5, 1 )
+final_scale = Vector2( 0.909, 1 )
+desafio = 3
+
+[node name="maceta" type="Node2D" parent="."]
+
+[node name="s_maceta" parent="maceta" instance=ExtResource( 2 )]
+modulate = Color( 0.47451, 0.47451, 0.47451, 1 )
+position = Vector2( 129.252, 716.361 )
+scale = Vector2( 1.01527, 1.01527 )
+texture = ExtResource( 13 )
+collision_scale = Vector2( 3, 5.5 )
+
+[node name="maceta" parent="maceta" instance=ExtResource( 1 )]
+position = Vector2( 1384.51, 920.574 )
+scale = Vector2( 1.10124, 1.05642 )
+texture = ExtResource( 12 )
+start_position = Vector2( 1384.51, 920.574 )
+final_position = Vector2( 253.278, 720.338 )
+collision_scale = Vector2( 1.8, 3.2 )
+final_scale = Vector2( 1.469, 1.394 )
+desafio = 3
+
+[node name="Plus" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 647.25, 448.206 )
+z_index = 3
+frames = SubResource( 1 )
+animation = "S30"
+
+[node name="Minus" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 647.25, 448.206 )
+z_index = 3
+frames = SubResource( 2 )
+animation = "nill"
+
+[node name="AnimationPlus" type="AnimationPlayer" parent="."]
+anims/zoom = SubResource( 3 )
+
+[node name="AnimationMinus" type="AnimationPlayer" parent="."]
+anims/zoom = SubResource( 4 )
+
+[node name="AnimationChallenge" type="AnimationPlayer" parent="."]
+anims/Change1 = SubResource( 5 )
+anims/Change2 = SubResource( 6 )
+
+[node name="Clock" parent="." instance=ExtResource( 20 )]
+position = Vector2( 33.424, 966.448 )
+
+[node name="espejo" type="Node2D" parent="."]
+
+[node name="s_espejo" parent="espejo" instance=ExtResource( 2 )]
+position = Vector2( 239.291, 368.962 )
+scale = Vector2( 0.946648, 0.962097 )
+texture = ExtResource( 23 )
+collision_scale = Vector2( 4, 5 )
+
+[node name="espejo" parent="espejo" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1574.49, 923.555 )
+scale = Vector2( 1.074, 1.066 )
+texture = ExtResource( 18 )
+start_position = Vector2( 1574.49, 923.555 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 2.3, 2.8 )
+final_scale = Vector2( 1.439, 1.428 )
+desafio = 3
+
+[node name="patito" type="Node2D" parent="."]
+
+[node name="s_patito" parent="patito" instance=ExtResource( 2 )]
+position = Vector2( 828.718, 643 )
+texture = ExtResource( 19 )
+collision_scale = Vector2( 1.7, 1.7 )
+
+[node name="patito" parent="patito" instance=ExtResource( 1 )]
+position = Vector2( 1389.67, 691.596 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 15 )
+start_position = Vector2( 1389.67, 691.596 )
+final_position = Vector2( 1173.04, 720.338 )
+collision_scale = Vector2( 1.9, 1.7 )
+final_scale = Vector2( 0.78, 0.78 )
+desafio = 3
+
+[node name="toalla" type="Node2D" parent="."]
+
+[node name="s_toalla" parent="toalla" instance=ExtResource( 2 )]
+position = Vector2( 1080.76, 445.456 )
+scale = Vector2( 0.842958, 0.856715 )
+texture = ExtResource( 21 )
+collision_scale = Vector2( 2.2, 5.2 )
+
+[node name="toalla" parent="toalla" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1773.77, 787.358 )
+scale = Vector2( 1.04585, 1.02122 )
+texture = ExtResource( 17 )
+start_position = Vector2( 1773.77, 790.128 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 1.8, 6.55 )
+final_scale = Vector2( 1, 0.79 )
+desafio = 3
+
+[node name="llave_agua" type="Node2D" parent="."]
+
+[node name="s_llave_agua" parent="llave_agua" instance=ExtResource( 2 )]
+position = Vector2( 478.004, 532.898 )
+scale = Vector2( 0.842958, 0.856715 )
+texture = ExtResource( 22 )
+collision_scale = Vector2( 1.6, 2 )
+
+[node name="llave_agua" parent="llave_agua" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 1593.35, 690.469 )
+scale = Vector2( 0.14, 0.14 )
+texture = ExtResource( 14 )
+start_position = Vector2( 1593.35, 690.469 )
+final_position = Vector2( 1036.19, 276.786 )
+collision_scale = Vector2( 14, 14 )
+final_scale = Vector2( 0.08, 0.08 )
+desafio = 1
+
+[node name="Timer_Challenge" type="Timer" parent="."]
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 388.0
+margin_top = 802.0
+margin_right = 664.0
+margin_bottom = 901.0
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tip" type="AnimatedSprite" parent="Popup"]
+position = Vector2( 367.257, -191.477 )
+z_index = 3
+frames = SubResource( 7 )
+animation = "Tip1"
+
+[node name="Ok_" type="Sprite" parent="Popup"]
+z_index = 3
+
+[node name="Ok" type="TextureButton" parent="Popup/Ok_"]
+margin_left = 0.682037
+margin_top = -0.449524
+margin_right = 274.682
+margin_bottom = 97.5505
+texture_normal = ExtResource( 36 )
+texture_pressed = ExtResource( 33 )
+texture_hover = ExtResource( 33 )
+texture_disabled = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="correcto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 44 )
+volume_db = -1.01
+
+[node name="backsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 43 )
+volume_db = -15.01
+
+[node name="change_desafio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 40 )
+volume_db = 15.145
+
+[node name="tip_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 42 )
+volume_db = 13.126
+
+[node name="win_level" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 45 )
+volume_db = 8.0
+
+[node name="incorrecto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 41 )
+volume_db = 10.097
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="."]
+resources = [ PoolStringArray( "Tip1", "desafio2", "espejo", "llave", "maceta", "pato", "perchero", "s_espejo", "s_llave", "s_maceta", "s_pato", "s_perchero", "s_toalla", "toalla" ), [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ) ] ]
+
+[node name="popup_sig" type="Popup" parent="."]
+visible = true
+margin_left = 1524.63
+margin_top = 923.46
+margin_right = 1906.63
+margin_bottom = 1065.46
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="popup_sig"]
+z_index = 2
+
+[node name="siguiente" type="TextureButton" parent="popup_sig/Sprite"]
+margin_left = 39.2075
+margin_top = 20.0141
+margin_right = 346.208
+margin_bottom = 118.014
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="change_challenge" from="." to="." method="_on_change_challenge"]
+[connection signal="score_gained" from="." to="ProgressBar" method="_on_score_gained"]
+[connection signal="score_lost" from="." to="ProgressBar" method="_on_score_lost"]
+[connection signal="show_scoreminus" from="." to="." method="_on_show_scoreminus"]
+[connection signal="show_scoreplus" from="." to="." method="_on_show_scoreplus"]
+[connection signal="show_tip" from="." to="." method="_on_show_tip"]
+[connection signal="start_timer" from="." to="Clock" method="_on_start_timer"]
+[connection signal="stop_timer" from="." to="Clock" method="_on_stop_timer"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="deselected" from="perchero/s_perchero" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="perchero/s_perchero" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="perchero/perchero" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="perchero/perchero" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="maceta/s_maceta" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="maceta/s_maceta" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="maceta/maceta" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="maceta/maceta" to="." method="_on_Obj_drop"]
+[connection signal="game_over" from="Clock" to="." method="_on_Clock_game_over"]
+[connection signal="deselected" from="espejo/s_espejo" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="espejo/s_espejo" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="espejo/espejo" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="espejo/espejo" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="patito/s_patito" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="patito/s_patito" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="patito/patito" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="patito/patito" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="toalla/s_toalla" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="toalla/s_toalla" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="toalla/toalla" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="toalla/toalla" to="." method="_on_Obj_drop"]
+[connection signal="deselected" from="llave_agua/s_llave_agua" to="." method="_on_Contenedor_deselected"]
+[connection signal="selected" from="llave_agua/s_llave_agua" to="." method="_on_Contenedor_selected"]
+[connection signal="clicked" from="llave_agua/llave_agua" to="." method="_on_Obj_clicked"]
+[connection signal="drop" from="llave_agua/llave_agua" to="." method="_on_Obj_drop"]
+[connection signal="timeout" from="Timer_Challenge" to="." method="_on_Timer_Challenge_timeout"]
+[connection signal="pressed" from="Popup/Ok_/Ok" to="." method="_on_Ok_pressed"]
+[connection signal="pressed" from="popup_sig/Sprite/siguiente" to="." method="_on_siguiente_pressed"]
