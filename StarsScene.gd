@@ -8,7 +8,7 @@ func _ready():
 
 func _on_Download_pressed():
 	#$HTTPRequest.request("https://drive.google.com/uc?export=download&id=1ZK9pkwiM5AWHH_sPPeeS0oVB0l9eGklC")
-	OS.shell_open("https://drive.google.com/uc?export=download&id=1ZK9pkwiM5AWHH_sPPeeS0oVB0l9eGklC")
+	OS.shell_open("http://getupstudio.co/Metrogas/Recetario.pdf")
 
 func select_stars():
 	if(int(Main.totalScore)<=860):
