@@ -6,7 +6,7 @@ func _ready():
 	$VideoPlayer.play()
 
 func _on_VideoPlayer_finished():
-	$Button.disabled=false
+	Main.select_level()
 
 func _on_Button_pressed():
 	Main.select_level()

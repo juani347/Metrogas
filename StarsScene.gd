@@ -11,10 +11,9 @@ func _on_Download_pressed():
 	OS.shell_open("https://drive.google.com/uc?export=download&id=1ZK9pkwiM5AWHH_sPPeeS0oVB0l9eGklC")
 
 func select_stars():
-	var aux=Main.totalScore
 	if(int(Main.totalScore)<=860):
 		$Textandstars.animation="one"
-	elif(int(Main.totalScore>860)&&int(Main.totalScore)<=1320):
+	elif(int(Main.totalScore>860)&&int(Main.totalScore)<=1599):
 		$Textandstars.animation="two"
 	else:
 		$Textandstars.animation="three"
