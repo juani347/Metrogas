@@ -94,9 +94,9 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ],
 "loop": true,
-"name": "S50",
+"name": "nill",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
