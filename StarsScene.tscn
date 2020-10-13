@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://StarsScene.gd" type="Script" id=1]
 [ext_resource path="res://images/stars2.png" type="Texture" id=2]
@@ -12,9 +12,15 @@
 [ext_resource path="res://images/next_pressed.png" type="Texture" id=10]
 [ext_resource path="res://images/next.png" type="Texture" id=11]
 [ext_resource path="res://music/win_game.wav" type="AudioStream" id=12]
+[ext_resource path="res://Fullscreen.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "two",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "three",
@@ -23,11 +29,6 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "one",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "two",
 "speed": 5.0
 } ]
 
@@ -82,5 +83,12 @@ __meta__ = {
 
 [node name="win" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
+
+[node name="Fullscreen" parent="." instance=ExtResource( 13 )]
+margin_left = 23.9385
+margin_top = 983.998
+margin_right = 796.938
+margin_bottom = 1760.0
+rect_scale = Vector2( 0.1, 0.1 )
 [connection signal="pressed" from="Download" to="." method="_on_Download_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]

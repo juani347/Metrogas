@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Obj.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Contenedor.tscn" type="PackedScene" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://music/ambiente.wav" type="AudioStream" id=43]
 [ext_resource path="res://music/correcto.wav" type="AudioStream" id=44]
 [ext_resource path="res://images/next_word_pressed.png" type="Texture" id=45]
+[ext_resource path="res://Fullscreen.tscn" type="PackedScene" id=46]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -53,14 +54,14 @@ animations = [ {
 "name": "S10",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "S100",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 28 ) ],
 "loop": true,
 "name": "S30",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "S100",
 "speed": 5.0
 } ]
 
@@ -567,6 +568,13 @@ texture_pressed = ExtResource( 45 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Fullscreen" parent="." instance=ExtResource( 46 )]
+margin_left = 1083.61
+margin_top = 937.778
+margin_right = 1856.61
+margin_bottom = 1713.78
+rect_scale = Vector2( 0.1, 0.1 )
 [connection signal="change_challenge" from="." to="." method="_on_change_challenge"]
 [connection signal="score_gained" from="." to="ProgressBar" method="_on_score_gained"]
 [connection signal="score_lost" from="." to="ProgressBar" method="_on_score_lost"]

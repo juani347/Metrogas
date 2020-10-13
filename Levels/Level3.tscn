@@ -1,10 +1,10 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Obj.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Contenedor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Level3.gd" type="Script" id=3]
 [ext_resource path="res://images/fondo_baño.jpg" type="Texture" id=4]
-[ext_resource path="res://images/desafio1.png" type="Texture" id=5]
+[ext_resource path="res://images/Level3/desafio1.png" type="Texture" id=5]
 [ext_resource path="res://images/Level3/desafio2.png" type="Texture" id=6]
 [ext_resource path="res://images/Level3/Tip1.png" type="Texture" id=7]
 [ext_resource path="res://ProgressBar.tscn" type="PackedScene" id=8]
@@ -25,6 +25,7 @@
 [ext_resource path="res://images/Level3/s_espejo.png" type="Texture" id=23]
 [ext_resource path="res://images/next_word.png" type="Texture" id=24]
 [ext_resource path="res://images/next_word_pressed.png" type="Texture" id=25]
+[ext_resource path="res://Fullscreen.tscn" type="PackedScene" id=26]
 [ext_resource path="res://images/score/plusthirty.png" type="Texture" id=28]
 [ext_resource path="res://images/score/minustwentyfive.png" type="Texture" id=29]
 [ext_resource path="res://images/score/plusten.png" type="Texture" id=30]
@@ -60,9 +61,9 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "nill",
+"name": "S50",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -70,9 +71,9 @@ animations = [ {
 "name": "S25",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 29 ) ],
 "loop": true,
-"name": "S50",
+"name": "S25",
 "speed": 5.0
 } ]
 
@@ -232,7 +233,7 @@ scale = Vector2( 0.822306, 0.822306 )
 texture = ExtResource( 38 )
 
 [node name="consigna1" type="Sprite" parent="."]
-position = Vector2( 1162.85, 542.972 )
+position = Vector2( 1171.85, 550.972 )
 texture = ExtResource( 5 )
 
 [node name="consigna2" type="Sprite" parent="."]
@@ -479,6 +480,13 @@ texture_pressed = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Fullscreen" parent="." instance=ExtResource( 26 )]
+margin_left = 1084.77
+margin_top = 937.94
+margin_right = 1857.77
+margin_bottom = 1713.94
+rect_scale = Vector2( 0.1, 0.1 )
 [connection signal="change_challenge" from="." to="." method="_on_change_challenge"]
 [connection signal="score_gained" from="." to="ProgressBar" method="_on_score_gained"]
 [connection signal="score_lost" from="." to="ProgressBar" method="_on_score_lost"]

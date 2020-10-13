@@ -8,13 +8,12 @@ func _ready():
 
 func _on_Download_pressed():
 	#$HTTPRequest.request("https://drive.google.com/uc?export=download&id=1ZK9pkwiM5AWHH_sPPeeS0oVB0l9eGklC")
-	OS.shell_open("https://drive.google.com/uc?export=download&id=1ZK9pkwiM5AWHH_sPPeeS0oVB0l9eGklC")
+	OS.shell_open("http://getupstudio.co/Metrogas/Recetario.pdf")
 
 func select_stars():
-	var aux=Main.totalScore
 	if(int(Main.totalScore)<=860):
 		$Textandstars.animation="one"
-	elif(int(Main.totalScore>860)&&int(Main.totalScore)<=1320):
+	elif(int(Main.totalScore>860)&&int(Main.totalScore)<=1599):
 		$Textandstars.animation="two"
 	else:
 		$Textandstars.animation="three"

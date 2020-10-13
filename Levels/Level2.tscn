@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Obj.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Contenedor.tscn" type="PackedScene" id=2]
@@ -60,6 +60,7 @@
 [ext_resource path="res://images/Level2/tip3.png" type="Texture" id=58]
 [ext_resource path="res://images/Level2/reloj.png" type="Texture" id=59]
 [ext_resource path="res://images/next_word.png" type="Texture" id=60]
+[ext_resource path="res://Fullscreen.tscn" type="PackedScene" id=61]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -68,14 +69,14 @@ animations = [ {
 "name": "S10",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "S100",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 28 ) ],
 "loop": true,
 "name": "S30",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "S100",
 "speed": 5.0
 } ]
 
@@ -94,6 +95,16 @@ animations = [ {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "S50",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "nill",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "S25",
 "speed": 5.0
 } ]
 
@@ -272,6 +283,11 @@ animations = [ {
 "frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "Tip2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": true,
+"name": "Tip3",
 "speed": 5.0
 } ]
 
@@ -597,6 +613,13 @@ texture_pressed = ExtResource( 60 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Fullscreen" parent="." instance=ExtResource( 61 )]
+margin_left = 1094.04
+margin_top = 942.411
+margin_right = 1867.04
+margin_bottom = 1718.41
+rect_scale = Vector2( 0.1, 0.1 )
 [connection signal="change_challenge" from="." to="." method="_on_change_challenge"]
 [connection signal="score_gained" from="." to="ProgressBar" method="_on_score_gained"]
 [connection signal="score_lost" from="." to="ProgressBar" method="_on_score_lost"]

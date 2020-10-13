@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fullscreen.gd" type="Script" id=1]
+[ext_resource path="res://images/fullscreen_pressed.png" type="Texture" id=2]
+[ext_resource path="res://images/fullscreen.png" type="Texture" id=3]
+
+[node name="Fullscreen" type="TextureButton"]
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_Fullscreen_pressed"]
