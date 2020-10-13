@@ -81,6 +81,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "nill",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "S25",
@@ -89,11 +94,6 @@ animations = [ {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "S50",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "nill",
 "speed": 5.0
 } ]
 
@@ -259,14 +259,14 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 35 ) ],
-"loop": true,
-"name": "Tip3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 37 ) ],
 "loop": true,
 "name": "Tip1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": true,
+"name": "Tip3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 32 ) ],

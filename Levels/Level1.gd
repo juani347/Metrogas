@@ -60,9 +60,10 @@ func _on_Obj_drop():
 		elif(obj_clicked.get_parent().name == 'llama'):
 			emit_signal("show_tip",2)
 			$tip_sound.play()
-		elif(obj_clicked.get_parent().name == 'gasista'):
+		elif(obj_clicked.get_parent().name == 'gasista' && !Main.tip_gasista):
 			emit_signal("show_tip",3)
 			$tip_sound.play()
+			Main.tip_gasista=true
 
 		if (colocados == 2 && !fin):
 			emit_signal("change_challenge",desafio+1)
@@ -71,12 +72,14 @@ func _on_Obj_drop():
 			$consigna2.show()
 			$change_desafio.play()
 			$AnimationChallenge.play("Change2")
+			$mano.position= Vector2(1866.76,272.96)
 		elif (colocados == 9):
 			emit_signal("change_challenge",desafio+1)
 			$consigna2.hide()
 			$consigna3.show()
 			$change_desafio.play()
 			$AnimationChallenge.play("Change3")
+			$mano.position= Vector2(1866.76,347.96)
 		elif (colocados == 11):
 			game_over()
 			

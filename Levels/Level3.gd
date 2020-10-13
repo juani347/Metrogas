@@ -54,7 +54,6 @@ func _on_Obj_drop():
 		emit_signal("score_gained",score_plus)
 		emit_signal("show_scoreplus")
 		if (obj_clicked.get_parent().name == 'llave_agua'):
-			#$llama/s_llama_olla.show() MOSTRAR LA LLAMITA DE LA OLLA
 			emit_signal("show_tip",1)
 			$tip_sound.play()
 
