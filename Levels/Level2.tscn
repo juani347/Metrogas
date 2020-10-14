@@ -83,9 +83,9 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 29 ) ],
 "loop": true,
-"name": "S50",
+"name": "S25",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -93,9 +93,9 @@ animations = [ {
 "name": "nill",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 29 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "S25",
+"name": "S50",
 "speed": 5.0
 } ]
 
@@ -269,11 +269,6 @@ animations = [ {
 "frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "Tip2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 35 ) ],
-"loop": true,
-"name": "Tip3",
 "speed": 5.0
 } ]
 

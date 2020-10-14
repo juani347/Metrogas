@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Obj.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Contenedor.tscn" type="PackedScene" id=2]
@@ -61,14 +61,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "nill",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "S25",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "nill",
 "speed": 5.0
 } ]
 

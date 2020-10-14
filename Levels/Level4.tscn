@@ -73,14 +73,14 @@ animations = [ {
 "name": "S50",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "nill",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "S25",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "nill",
 "speed": 5.0
 } ]
 
