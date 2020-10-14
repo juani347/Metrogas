@@ -65,6 +65,7 @@ func _on_Obj_drop():
 			$AnimationChallenge.play("Change2")
 		elif (colocados == 6):
 			game_over()
+			$popup_sig/Time_over.hide()
 	  
 		score_current+=score_plus
 		score_current=clamp(score_current,0,score_max)

@@ -26,6 +26,7 @@
 [ext_resource path="res://images/next_word.png" type="Texture" id=24]
 [ext_resource path="res://images/next_word_pressed.png" type="Texture" id=25]
 [ext_resource path="res://Fullscreen.tscn" type="PackedScene" id=26]
+[ext_resource path="res://images/timer_over.png" type="Texture" id=27]
 [ext_resource path="res://images/score/plusthirty.png" type="Texture" id=28]
 [ext_resource path="res://images/score/minustwentyfive.png" type="Texture" id=29]
 [ext_resource path="res://images/score/plusten.png" type="Texture" id=30]
@@ -452,23 +453,30 @@ resources = [ PoolStringArray( "Tip1", "desafio2", "espejo", "llave", "maceta", 
 
 [node name="popup_sig" type="Popup" parent="."]
 visible = true
-margin_left = 1524.63
-margin_top = 923.46
-margin_right = 1906.63
-margin_bottom = 1065.46
+margin_left = 1340.0
+margin_top = 880.0
+margin_right = 1653.0
+margin_bottom = 979.0
 popup_exclusive = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Time_over" type="Sprite" parent="popup_sig"]
+position = Vector2( 141.19, -233.204 )
+scale = Vector2( 1.1, 1.1 )
+z_index = 2
+texture = ExtResource( 27 )
+
 [node name="Sprite" type="Sprite" parent="popup_sig"]
+position = Vector2( 184.63, 43.46 )
 z_index = 2
 
 [node name="siguiente" type="TextureButton" parent="popup_sig/Sprite"]
-margin_left = 39.2075
-margin_top = 20.0141
-margin_right = 346.208
-margin_bottom = 118.014
+margin_left = -182.542
+margin_top = -39.9182
+margin_right = 124.458
+margin_bottom = 58.0818
 texture_normal = ExtResource( 24 )
 texture_pressed = ExtResource( 25 )
 __meta__ = {
