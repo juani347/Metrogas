@@ -42,7 +42,7 @@
 [ext_resource path="res://music/change_desafio2.wav" type="AudioStream" id=40]
 [ext_resource path="res://music/incorrecto2.wav" type="AudioStream" id=41]
 [ext_resource path="res://music/popup.wav" type="AudioStream" id=42]
-[ext_resource path="res://music/ambiente.wav" type="AudioStream" id=43]
+[ext_resource path="res://music/ambiente.wav.wav" type="AudioStream" id=43]
 [ext_resource path="res://music/correcto.wav" type="AudioStream" id=44]
 [ext_resource path="res://images/next_word_pressed.png" type="Texture" id=45]
 [ext_resource path="res://Fullscreen.tscn" type="PackedScene" id=46]
@@ -54,27 +54,27 @@ animations = [ {
 "name": "S10",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "S30",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "S100",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "S30",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "nill",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "S25",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "nill",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -369,7 +369,7 @@ desafio = 2
 position = Vector2( 879.003, 778.727 )
 z_index = 1
 texture = ExtResource( 17 )
-collision_scale = Vector2( 0.8, 0.8 )
+collision_scale = Vector2( 1.2, 1.2 )
 
 [node name="llama" parent="llama" instance=ExtResource( 1 )]
 modulate = Color( 1, 1, 1, 0.705882 )

@@ -42,7 +42,7 @@
 [ext_resource path="res://music/change_desafio2.wav" type="AudioStream" id=40]
 [ext_resource path="res://music/incorrecto2.wav" type="AudioStream" id=41]
 [ext_resource path="res://music/popup.wav" type="AudioStream" id=42]
-[ext_resource path="res://music/ambiente.wav" type="AudioStream" id=43]
+[ext_resource path="res://music/ambiente.wav.wav" type="AudioStream" id=43]
 [ext_resource path="res://music/correcto.wav" type="AudioStream" id=44]
 [ext_resource path="res://music/win_level.wav" type="AudioStream" id=45]
 [ext_resource path="res://images/Level1/calefon.png" type="Texture" id=46]
@@ -94,19 +94,19 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ],
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "S25",
+"speed": 5.0
+}, {
+"frames": [  ],
 "loop": true,
 "name": "nill",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 29 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "S25",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "S25",
+"name": "S50",
 "speed": 5.0
 } ]
 
@@ -277,14 +277,14 @@ animations = [ {
 "name": "Tip1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "Tip2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 35 ) ],
 "loop": true,
 "name": "Tip3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "Tip2",
 "speed": 5.0
 } ]
 
@@ -380,7 +380,7 @@ visible = false
 position = Vector2( 647.25, 448.206 )
 z_index = 3
 frames = SubResource( 2 )
-animation = "nill"
+animation = "S50"
 
 [node name="AnimationPlus" type="AnimationPlayer" parent="."]
 anims/zoom = SubResource( 3 )
@@ -468,7 +468,7 @@ position = Vector2( 1036.11, 287.114 )
 scale = Vector2( 0.905477, 0.980938 )
 z_index = 1
 texture = ExtResource( 17 )
-collision_scale = Vector2( 0.8, 0.8 )
+collision_scale = Vector2( 1.2, 1 )
 
 [node name="ventilacion" type="Node2D" parent="."]
 

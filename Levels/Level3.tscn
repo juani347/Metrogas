@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Obj.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Contenedor.tscn" type="PackedScene" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://images/Level3/desafio2.png" type="Texture" id=6]
 [ext_resource path="res://images/Level3/Tip1.png" type="Texture" id=7]
 [ext_resource path="res://ProgressBar.tscn" type="PackedScene" id=8]
-[ext_resource path="res://images/score/minusfifty.png" type="Texture" id=9]
+[ext_resource path="res://music/ambiente.wav.wav" type="AudioStream" id=9]
 [ext_resource path="res://images/score/plushundred.png" type="Texture" id=10]
 [ext_resource path="res://images/Level3/perchero.png" type="Texture" id=11]
 [ext_resource path="res://images/Level3/maceta.png" type="Texture" id=12]
@@ -37,7 +37,6 @@
 [ext_resource path="res://music/change_desafio2.wav" type="AudioStream" id=40]
 [ext_resource path="res://music/incorrecto2.wav" type="AudioStream" id=41]
 [ext_resource path="res://music/popup.wav" type="AudioStream" id=42]
-[ext_resource path="res://music/ambiente.wav" type="AudioStream" id=43]
 [ext_resource path="res://music/correcto.wav" type="AudioStream" id=44]
 [ext_resource path="res://music/win_level.wav" type="AudioStream" id=45]
 
@@ -61,19 +60,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "S50",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "S25",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 29 ) ],
+"frames": [  ],
 "loop": true,
-"name": "S25",
+"name": "nill",
 "speed": 5.0
 } ]
 
@@ -434,7 +428,7 @@ stream = ExtResource( 44 )
 volume_db = -1.01
 
 [node name="backsound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 43 )
+stream = ExtResource( 9 )
 volume_db = -15.01
 
 [node name="change_desafio" type="AudioStreamPlayer2D" parent="."]
