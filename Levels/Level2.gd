@@ -83,7 +83,7 @@ func _on_Obj_drop():
 			$mano.position= Vector2(1866.76,347.96)
 		elif (colocados == 10):
 			game_over()
-			
+			$popup_sig/Time_over.hide()
 		score_current+=score_plus
 		score_current=clamp(score_current,0,score_max)
 

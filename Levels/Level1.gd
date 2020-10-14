@@ -82,6 +82,7 @@ func _on_Obj_drop():
 			$mano.position= Vector2(1866.76,347.96)
 		elif (colocados == 11):
 			game_over()
+			$popup_sig/Time_over.hide()
 			
 	  
 		score_current+=score_plus
@@ -140,7 +141,6 @@ func game_over():
 	$popup_sig.popup()
 
 
-
 func _on_Timer_Challenge_timeout():
 	var val=desafio
 	score_plus=Main.scoreplus_challenge[val-1]
@@ -160,7 +160,6 @@ func _on_show_tip(tip):
 func _on_Ok_pressed():
 	pop.hide()
 	emit_signal("start_timer")
-
 
 func _on_siguiente_pressed():
 	Main.select_level()
