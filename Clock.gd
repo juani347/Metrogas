@@ -24,7 +24,7 @@ func _on_Timer_timeout():
 	else:
 		$Number.text=str(current_time)
 		$Clock.value=current_time
-		if(current_time==15):
+		if(Main.level_seleted==2&&current_time==15):
 			$Timer.wait_time=0.5
 
 func _on_stop_timer():

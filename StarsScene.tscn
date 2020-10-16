@@ -21,14 +21,14 @@ animations = [ {
 "name": "two",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "one",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "three",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "one",
 "speed": 5.0
 } ]
 
@@ -44,12 +44,12 @@ position = Vector2( 965.867, 606.728 )
 texture = ExtResource( 3 )
 
 [node name="Textandstars" type="AnimatedSprite" parent="."]
-position = Vector2( 968.588, 287.039 )
+position = Vector2( 955.24, 409.844 )
 frames = SubResource( 1 )
 animation = "three"
 
 [node name="Text" type="Sprite" parent="."]
-position = Vector2( 972.669, 712.837 )
+position = Vector2( 972.669, 835.837 )
 texture = ExtResource( 5 )
 
 [node name="Download" type="TextureButton" parent="."]

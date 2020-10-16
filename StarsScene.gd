@@ -11,7 +11,7 @@ func _on_Download_pressed():
 	OS.shell_open("http://getupstudio.co/Metrogas/Recetario.pdf")
 
 func select_stars():
-	var aux=Main.totalScore
+	#var aux=int(Main.totalScore)
 	if(int(Main.totalScore)<=860):
 		$Textandstars.animation="one"
 	elif(int(Main.totalScore>860)&&int(Main.totalScore)<=1599):

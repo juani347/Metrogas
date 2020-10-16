@@ -1,7 +1,7 @@
 extends Node2D
 
 var level_seleted=2
-var time_challenge=[41,31]
+var time_challenge=[61,41]
 var scoreplus_challenge=[30,100,10,0]
 var scoreminus_challenge=[25,50,0,0]
 var selectedlevel
@@ -36,3 +36,9 @@ func select_level():
 	levels[selectedlevel]=1
 	newgame=false
 	get_tree().change_scene_to(scene)
+
+func non_zero(score):
+	if(score<0):
+		return 0
+	else:
+		return score
