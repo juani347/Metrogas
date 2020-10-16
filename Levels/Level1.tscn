@@ -95,14 +95,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "S25",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "nill",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "S25",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -273,11 +273,6 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 37 ) ],
-"loop": true,
-"name": "Tip1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 35 ) ],
 "loop": true,
 "name": "Tip3",
@@ -286,6 +281,11 @@ animations = [ {
 "frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "Tip2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 37 ) ],
+"loop": true,
+"name": "Tip1",
 "speed": 5.0
 } ]
 
@@ -709,4 +709,5 @@ __meta__ = {
 [connection signal="drop" from="gasista/gasista" to="." method="_on_Obj_drop"]
 [connection signal="timeout" from="Timer_Challenge" to="." method="_on_Timer_Challenge_timeout"]
 [connection signal="pressed" from="Popup/Ok_/Ok" to="." method="_on_Ok_pressed"]
+[connection signal="finished" from="backsound" to="." method="_on_backsound_finished"]
 [connection signal="pressed" from="popup_sig/Sprite/siguiente" to="." method="_on_siguiente_pressed"]
