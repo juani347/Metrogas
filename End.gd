@@ -5,6 +5,7 @@ func _ready():
 
 func _on_Play_again_pressed():
 	Main.levels=[0,0,0,0,0]
+	Main.totalScore=0
 	Main.newgame=true
 	get_tree().change_scene_to(load("res://Welcome.tscn"))
 

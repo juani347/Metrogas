@@ -68,12 +68,13 @@ func _on_Obj_drop():
 			$popup_sig/Time_over.hide()
 	  
 		score_current+=score_plus
-		score_current=clamp(score_current,0,score_max)
+		#score_current=clamp(score_current,0,score_max)
 
 	else:	
 		if(container && !fin):		# SOMBRA INCORRECTA
 			score_current-=score_minus
-			score_current=clamp(score_current,0,score_max)
+			score_current=Main.non_zero(score_current)
+			#score_current=clamp(score_current,0,score_max)
 			$incorrecto.play()
 			emit_signal("score_lost",score_minus)
 			emit_signal("show_scoreminus")
@@ -145,3 +146,7 @@ func _on_Ok_pressed():
 	
 func _on_siguiente_pressed():
 	Main.select_level()
+
+
+func _on_backsound_finished():
+	$backsound.play()

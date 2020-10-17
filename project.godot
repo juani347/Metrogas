@@ -15,8 +15,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="DragAndDrop"
+config/name="Metrogas"
 run/main_scene="res://Welcome.tscn"
+config/icon="res://index.png"
 
 [autoload]
 
